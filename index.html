@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Summary Generator</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header with Logo and Login -->
+    <header>
+        <div class="logo">
+            <h1>YouTube Summary</h1>
+        </div>
+        <div class="login">
+            <a href="login.html">Login</a>
+        </div>
+    </header>
+
+    <!-- Main Section: YouTube URL Input & Language Selection -->
+    <section id="main">
+        <div class="container">
+            <h2>Paste Your YouTube Video URL</h2>
+            <form action="process_summary.php" method="POST" class="video-form">
+                <label for="youtube-url">Enter YouTube URL:</label>
+                <input type="url" id="youtube-url" name="youtube_url" placeholder="Paste YouTube URL" required>
+                
+                <label for="language">Choose Summary Language:</label>
+                <select id="language" name="language">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <!-- Add more languages as needed -->
+                </select>
+                
+                <button type="submit">Generate Summary</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Summary Section (after processing the URL) -->
+    <section id="summary-section" class="hidden">
+        <div class="container">
+            <h2>Video Summary</h2>
+            <div id="summary-content"></div>
+            <div class="download">
+                <button onclick="downloadSummary()">Download Summary (PDF)</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Social Media Links and Ads -->
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">Instagram</a>
+        </div>
+        <div class="ads">
+            <!-- Google Ads code here -->
+            <div class="google-ads">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="YOUR-CLIENT-ID"
+                    data-ad-slot="YOUR-AD-SLOT"
+                    data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JS File -->
+    <script src="script.js"></script>
+</body>
+
+</html>
